@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { OmarComponent } from './omar/omar.component';
+import { DataComponent } from './data/data.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    OmarComponent
+    OmarComponent,
+    DataComponent
   ],
   imports: [
     BrowserModule,
