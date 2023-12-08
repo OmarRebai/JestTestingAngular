@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/internal/Observable';
   providedIn: 'root',
 })
 export class FakeService {
-  constructor(private http:HttpClie) {}
+  constructor(private http:HttpClient) {}
   getDatav1(): Observable<any> {
     const url = 'https://jsonplaceholder.typicode.com/todos/1';
     return this;
