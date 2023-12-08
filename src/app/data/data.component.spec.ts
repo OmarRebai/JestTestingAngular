@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DataComponent } from './data.component';
 import { FakeService } from '../services/fake.service';
-import { of } from 'rxjs';
+import { of, throwError } from 'rxjs';
 
 describe('DataComponent', () => {
   let component: DataComponent;
@@ -32,5 +32,16 @@ describe('DataComponent', () => {
       name:"Omar Rebai"
     }
   jest.spyOn(fakeServiceMock,'getSataV1').mockReturnValue(of(expRes));
+  fixture.detectChanges();
   expect(component.serviceData.name).toBe(expRes.name);
-})});
+});
+it('should getServiceData set errorMessage',()=>{
+  const errorRes={
+    error:'test 404 error',
+    status:404,statusText:'Not Found'
+  }
+  jest.spyOn(fakeServiceMock,'getSataV1').mockReturnValue(throwError(()=>errorRes));
+component.getServiceData();
+expect(component.errorMessage).toBe('Not Found')
+})
+});
