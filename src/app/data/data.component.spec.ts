@@ -44,4 +44,31 @@ it('should getServiceData set errorMessage',()=>{
 component.getServiceData();
 expect(component.errorMessage).toBe('Not Found')
 })
+it('should getServiceData set serviceData',()=>{
+  const expRes={
+    name:"Omar Rebai",
+    time:12
+  }
+jest.spyOn(fakeServiceMock,'getSataV1').mockReturnValue(of(expRes));
+fixture.detectChanges();
+expect(component.greeting).toBe("Good day");
+});
+it('should getServiceData set serviceData',()=>{
+  const expRes={
+    name:"Omar Rebai",
+    time:9
+  }
+jest.spyOn(fakeServiceMock,'getSataV1').mockReturnValue(of(expRes));
+fixture.detectChanges();
+expect(component.greeting).toBe("Good morning");
+});
+it('should getServiceData set serviceData',()=>{
+  const expRes={
+    name:"Omar Rebai",
+    time:22
+  }
+jest.spyOn(fakeServiceMock,'getSataV1').mockReturnValue(of(expRes));
+fixture.detectChanges();
+expect(component.greeting).toBe("Good evening");
+});
 });
