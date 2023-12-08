@@ -8,7 +8,7 @@ import { Observable } from 'rxjs/internal/Observable';
 export class FakeService {
   constructor(private http: HttpClient) {}
   getDatav1(): Observable<any> {
-    const url = 'https://jsonplaceholder.typicode.com/todos/1';
+    const url = 'https://jsonplaceholder.typicode.com/';
     return this.http.get(url);
   }
 }
