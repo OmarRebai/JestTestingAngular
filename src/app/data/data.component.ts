@@ -9,12 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class DataComponent implements OnInit {
   errorMessage:any;
   serviceData:any;
-  constructor(private FakeService:FakeService) { }
+  constructor(private fakeService:FakeService) { }
   
   ngOnInit(): void {
     this.getServiceData();}
     getServiceData() {
-    this.FakeService.getDataV1().subscribe(
+    this.fakeService.getDataV1().subscribe(
       {
     next: data =>{this.serviceData=data;},
     error: err => {this.errorMessage=err.statusText;},
