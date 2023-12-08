@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 
@@ -5,9 +6,9 @@ import { Observable } from 'rxjs/internal/Observable';
   providedIn: 'root',
 })
 export class FakeService {
-  constructor(private http:HttpClient) {}
+  constructor(private http: HttpClient) {}
   getDatav1(): Observable<any> {
     const url = 'https://jsonplaceholder.typicode.com/todos/1';
-    return this;
+    return this.http.get(url);
   }
 }
